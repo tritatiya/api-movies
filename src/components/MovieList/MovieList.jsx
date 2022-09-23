@@ -16,7 +16,7 @@ const getLocalItems = ()=> {
 const MovieList = ({searchText}) => {
 
     const [movies, setMovies] = useState([])
-    // const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(false)
     const [cartItems, setCartItems] = useState(getLocalItems())
 
     useEffect(()=>{
@@ -26,6 +26,7 @@ const MovieList = ({searchText}) => {
 
     useEffect(()=> {
       const fetchData = async()=>{
+        setLoading(true)
         const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=cf526ff11604bcb9e384182044651d7e&query=${searchText}`)
         const data = await response.json();
         
@@ -40,33 +41,39 @@ const MovieList = ({searchText}) => {
           })
           setMovies(newMovies)
         }
+        setLoading(false)
       }
       fetchData()
     },[searchText])
 
-  return (
-    <section className="movielist">
-      <div className="container">
-        <div className="section-title">
-          <h2>result</h2>
-        </div>
-        <div className="movielist-content grid">
-            {movies.map((item, index)=>(
-              <Movie 
-              setCartItems={setCartItems}
-              cartItems={cartItems}
-              key={index}
-              id={item.id}
-              title={item.title}
-              poster={item.poster}
-              price={item.price}
-              
-              />
-            ))}
-        </div>
-      </div>
-    </section>
-  )
+    if(loading) return <Loader/>
+    if(movies.length>0) {
+      return (
+        <section className="movielist">
+          <div className="container">
+            <div className="section-title">
+              <h2>result</h2>
+            </div>
+            <div className="movielist-content grid">
+                {movies.map((item, index)=>(
+                  <Movie 
+                  setCartItems={setCartItems}
+                  cartItems={cartItems}
+                  key={index}
+                  id={item.id}
+                  title={item.title}
+                  poster={item.poster}
+                  price={item.price}
+                  
+                  />
+                ))}
+            </div>
+          </div>
+        </section>
+      )
+    }
+
+  
 }
 
 export default MovieList

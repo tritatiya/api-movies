@@ -23,7 +23,8 @@ const Movie = ({title,poster, id, price,setCartItems, cartItems }) => {
                   <span className="text-capitalize fw-7">Price: </span>
                   <span>{price} Baht</span>
               </div>
-              <button className="add-cart-btn" onClick={addToCart} >
+              <button className="add-cart-btn" 
+                        onClick={()=>{addToCart();alert('Success')}} >
                 ADD TO CART
               </button>
           </div>

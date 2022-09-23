@@ -1,0 +1,38 @@
+.payment-container{
+    border: 1px solid;
+    position: fixed;
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    width: 60%;
+    /* margin:   ; */
+    transform: translate(-50%,-50%);
+    height: 80%;
+    background-color: #C3F8FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.esc{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 4rem;
+    margin-top: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+}
+
+.payment-container img{
+    width: 50%;
+    height: 70%;
+    
+}
+
+.payment-countdown{
+    margin-top: 2rem;
+    font-size: 5rem;
+    color: red;
+    font-weight: bold;
+}

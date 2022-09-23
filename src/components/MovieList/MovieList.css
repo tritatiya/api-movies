@@ -1,0 +1,54 @@
+.movielist, .movie-details{
+    padding: 3rem 0;
+    background-color: #f8f9fa;
+}
+
+.movielist-content{
+    gap: 3rem;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.movie-item{
+    
+    padding: 3rem 2rem;
+    border-radius: 4px;
+    background-color: var(--white-color);
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 15px 0px;
+    transition: var(--transition);
+}
+
+.movie-item:hover{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.movie-item-img img{
+    max-width: 180px;
+    /* margin-right: auto;
+    margin-left: auto;  */
+}
+
+.movie-item-info-item.title{
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    margin-top: 1rem;
+}
+
+
+.movie-item-info-item.author{
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.add-cart-btn{
+    cursor: pointer;
+    padding: 0.5rem 2.1rem;
+    border-radius: 0.5rem;
+    background-color: var(--white-color);
+    transition: var(--transition);
+    margin-top: 1rem;
+}
+
+.add-cart-btn:hover{
+    background-color: #FFF6BF;
+}
+

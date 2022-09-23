@@ -1,0 +1,33 @@
+.search-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.search-form{
+    width: 100%;
+    max-width: 680px;
+}
+
+.search-form-elem{
+    border: 1px solid;
+    padding: 1.4rem 2.8rem;
+
+}
+
+.search-form-elem .form-control{
+    width: 100%;
+    font-size: 2rem;
+    padding: 0.6rem;
+}
+
+.search-form-elem .form-control::placeholder{
+    opacity: 0.9;
+}
+
+.search-form-elem button{
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}

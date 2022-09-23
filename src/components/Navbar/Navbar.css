@@ -1,0 +1,44 @@
+.navbar{
+    display: flex;
+    padding: 1.8rem 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+        
+}
+
+.navbar-brand{
+    width: 90px;
+}
+
+.navbar-brand span{
+    margin-left: 2rem;
+}
+
+.brand-and-toggler{
+    cursor: pointer;
+    width: 200px ;
+}
+
+.navbar-content{
+    width: 100%;
+}
+
+
+.navbar-collapse{
+    background-color: var(--black-color);
+    position: relative;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cart-btn{
+    margin-right: 2.5rem;
+    cursor: pointer;
+}
+
+
+
+

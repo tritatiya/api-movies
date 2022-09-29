@@ -1,15 +1,19 @@
 import React from 'react'
 import { useState } from 'react'
 import { FaSearch } from "react-icons/fa";
+import { useDispatch } from 'react-redux';
+import { setSearch } from '../../actions/searchAction';
 import './SearchForm.css'
 
-const SearchForm = ({searchText, setSearchText}) => {
+const SearchForm = () => {
+
+    const dispatch = useDispatch();
 
     const [searchInput,setSearchInput] = useState('')
     const handleChange = (e) => setSearchInput(e.target.value)
     const handleSubmit = (e) => {
         e.preventDefault()
-        setSearchText(searchInput)
+        dispatch(setSearch(searchInput))
     }
 
 

@@ -5,7 +5,7 @@ import Logo from '../../assets/logo.jpg'
 
 const Movie = ({title,poster, id, price,setCartItems, cartItems }) => {
     const addToCart = ()=> {
-        setCartItems([...cartItems, {title, poster,price,id}])
+        setCartItems([...cartItems, {title:title, poster,price,id}])
     }
   return (
       <div className="movie-item flex flex-column flex-sb">

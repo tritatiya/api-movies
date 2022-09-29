@@ -17,7 +17,7 @@ const Cart = () => {
 
     const [popup, setPopup] = useState(false)
     const removeItem = (index)=>{
-        setCartList(cartList.filter((item, id)=>index!==id))
+        setCartList(cartList.filter((item, id)=> index!==id))
     }
     const clearItems = ()=>{
         setCartList([])
@@ -30,11 +30,11 @@ const Cart = () => {
         }
         if(cartList.length>=3 && cartList.length<5){
             const discount = 10/100*sum
-            sum = sum-discount
+            sum -= discount
         }
         if(cartList.length>=5){
             const discount = 20/100*sum
-            sum = sum-discount
+            sum -= discount
         }
         return sum
     }
@@ -73,7 +73,17 @@ const Cart = () => {
             ))}
         </div>
         <div className="cart-sum">
-            <div className="sum-price">Total{cartList.length >= 3 ? cartList.length>=5 ? '(Discount 20%)' : '(Discount 10%)' : null} : {sumPrice()}</div>
+            <div className="sum-price">
+                Total{
+                cartList.length >= 3 
+                    ? cartList.length>=5 
+                        ? '(Discount 20%)' 
+                        : '(Discount 10%)' 
+                    : null} 
+                
+                
+                : {sumPrice()}
+            </div>
             <button className="checkout" onClick={()=>setPopup(true)}>Check Out</button>
         </div>
         {popup? <Payment popup={popup} setPopup={setPopup} />: null}

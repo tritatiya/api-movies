@@ -1,6 +1,5 @@
 import React from 'react'
 import MovieList from '../MovieList/MovieList'
-import Header from '../Header/Header'
 import SearchForm from '../SearchForm/SearchForm'
 import './Home.css'
 import { useState } from 'react'
